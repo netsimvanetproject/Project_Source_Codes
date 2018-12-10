@@ -13,6 +13,20 @@
 * ---------------------------------------------------------------------------------*/
 #include "Application.h"
 
+typedef struct stru_NetSim_BSM_Header BSM_Header;
+struct stru_NetSim_BSM_Header
+{
+	double Source_vehicle_coordinates[2];
+	unsigned int Source_Vehicle_ID;
+	unsigned int MessageID;
+	double Sender_vehicle_coordinates[2];
+	unsigned int Sender_Vehicle_ID;
+	double Sender_vehicle_Speed;
+	double Timestamp;
+	double Message_Direction;
+	unsigned int Flag_FromTrailingVehicle;
+};
+
 int fn_NetSim_Application_BSM(PAPP_BSM_INFO info,
 							  double* fSize,
 							  double* ldArrival,
@@ -105,6 +119,20 @@ bool add_sae_j2735_payload(NetSim_PACKET* packet, APP_INFO* info)
 {
 	// Add the payload based on SAE J2735 or any other standard
 	// return true after adding.
+	BSM_Header* pBSMHeader = calloc(1, sizeof* pBSMHeader);
+	pBSMHeader->Flag_FromTrailingVehicle=0;
+	pBSMHeader->MessageID=packet->nPacketId;
+	pBSMHeader->Message_Direction = 0.0;
+	pBSMHeader->Sender_vehicle_coordinates[0] = DEVICE_POSITION(packet->nSourceId)->X;
+	pBSMHeader->Sender_vehicle_coordinates[1] = DEVICE_POSITION(packet->nSourceId)->Y;
+	pBSMHeader->Sender_Vehicle_ID = packet->nTransmitterId;
+	pBSMHeader->Sender_vehicle_Speed = 0.0;
+	pBSMHeader->Source_vehicle_coordinates[0] = DEVICE_POSITION(packet->nSourceId)->X;
+	pBSMHeader->Source_vehicle_coordinates[1] = DEVICE_POSITION(packet->nSourceId)->Y;
+	pBSMHeader->Source_Vehicle_ID = packet->nSourceId;
+	pBSMHeader->Timestamp = packet->dEventTime;
+	pstruEventDetails->pPacket->pstruAppData->Packet_AppProtocol = pBSMHeader;
+	return true;
 	return false;
 }
 
@@ -112,4 +140,5 @@ void process_saej2735_packet(NetSim_PACKET* packet)
 {
 	//Add the code to process the SAE J2735 packet.
 	//This function is called in Application_IN event.
+	BSM_Header* pBSMHeader = packet->pstruAppData->Packet_AppProtocol;
 }

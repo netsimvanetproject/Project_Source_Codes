@@ -445,4 +445,14 @@ int fn_NetSim_Add_DummyPayload(NetSim_PACKET* packet, APP_INFO*);
 
 //Encryption
 char xor_encrypt(char ch, long key);
+
+
+
+/*****REBROADCAST *****/
+#define REBROADCAST
+void rebroadcast_add_packet_to_info(NetSim_PACKET* packet,
+									double time);
+void rebroadcast_packet(NetSim_PACKET* packet,
+						NETSIM_ID devId,
+						double time);
 #endif

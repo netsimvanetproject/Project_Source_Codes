@@ -148,6 +148,9 @@ _declspec (dllexport) int fn_NetSim_Application_Run()
 				}
 				else
 				{
+#ifdef REBROADCAST
+					if(appInfo->sourceList[0] == pstruEventDetails->nDeviceId)
+#endif
 					fn_NetSim_Application_GenerateNextPacket(appInfo,
 															 pstruPacket->nSourceId,
 															 destCount,
@@ -159,7 +162,16 @@ _declspec (dllexport) int fn_NetSim_Application_Run()
 				fn_NetSim_Add_DummyPayload(pstruPacket,appInfo);
 				//Place the packet to socket buffer
 				fn_NetSim_Socket_PassPacketToInterface(nDeviceId, pstruPacket, s);
+#ifdef REBROADCAST
+				if (appInfo->sourceList[0] == pstruEventDetails->nDeviceId)
+#endif
 				appmetrics_src_add(appInfo,pstruPacket);
+
+#ifdef REBROADCAST
+				if(!dest[0])
+					rebroadcast_add_packet_to_info(pstruPacket, pstruEventDetails->dEventTime);
+#endif // REBROADCAST
+
 			}
 		}
 		break;
@@ -174,6 +186,9 @@ _declspec (dllexport) int fn_NetSim_Application_Run()
 				pstruappinfo=appInfo[pstruPacket->pstruAppData->nApplicationId-1];
 				pstruPacket->pstruAppData->dEndTime = pstruEventDetails->dEventTime;
 				fn_NetSim_Application_Plot(pstruPacket);
+#ifdef REBROADCAST
+				if (pstruappinfo->sourceList[0] == pstruPacket->nSourceId)
+#endif
 				appmetrics_dest_add(pstruappinfo, pstruPacket, pstruEventDetails->nDeviceId);
 				if(pstruappinfo->nAppType==TRAFFIC_PEER_TO_PEER && pstruPacket->pstruAppData->nAppEndFlag==1)
 				{
@@ -188,8 +203,27 @@ _declspec (dllexport) int fn_NetSim_Application_Run()
 				{
 					process_saej2735_packet(pstruPacket);
 				}
+
+#ifdef REBROADCAST
+				UINT destCount;
+				NETSIM_ID* dest = get_dest_from_packet(pstruPacket, &destCount);
+				if (!dest[0])
+				{
+					rebroadcast_packet(pstruPacket,
+									   pstruEventDetails->nDeviceId,
+									   pstruEventDetails->dEventTime);
+				}
+				else
+				{
+#elif
 				//Delete the packet
 				fn_NetSim_Packet_FreePacket(pstruPacket);
+#endif // REBROADCAST
+#ifdef REBROADCAST
+				}
+#endif
+
+				
 			}
 			// Here which type is placed is only getting processed next one is not getting processed
 			else if (pstruPacket->nControlDataType == packet_COAP_REQUEST)
