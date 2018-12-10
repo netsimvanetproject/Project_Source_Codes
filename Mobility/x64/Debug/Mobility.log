@@ -1,0 +1,19 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  Sumo_interface.c
+  NodeJoin.c
+  Mobility.c
+  GroupMobility.c
+  FileBasedMobility.c
+  Generating Code...
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1189,5): warning MSB8012: TargetPath(C:\Program Files\NetSim Standard\src\Simulation\Mobility\..\Dll\Mobility.dll) does not match the Linker's OutputFile property value (C:\Program Files\NetSim Standard\src\Simulation\Dll\libMobility.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1191,5): warning MSB8012: TargetName(Mobility) does not match the Linker's OutputFile property value (libMobility). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+FileBasedMobility.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+  list.lib(List.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+FileBasedMobility.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+     Creating library ..\Dll\Mobility.lib and object ..\Dll\Mobility.exp
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  Finished generating code
+list.lib(List.obj) : warning LNK4099: PDB 'List.pdb' was not found with 'list.lib(List.obj)' or at 'C:\Program Files\NetSim Standard\src\Simulation\Dll\List.pdb'; linking object as if no debug info
+  Mobility.vcxproj -> C:\Program Files\NetSim Standard\src\Simulation\Mobility\..\Dll\Mobility.dll
+  Mobility.vcxproj -> ..\Dll\Mobility.pdb (Full PDB)

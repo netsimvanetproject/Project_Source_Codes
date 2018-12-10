@@ -1,0 +1,35 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  WindowScale.c
+  TCP_Test.c
+  TCP_Socket.c
+  TCP_Packet.c
+  TCP_Outgoing.c
+  TCP_NetworkInterface.c
+  TCP_Incoming.c
+  TCP_Enum.c
+  TCP_Connection.c
+  TCP_ApplicationInterface.c
+  TCP.c
+c:\program files\netsim standard\src\simulation\tcp\tcp.c(19): warning C4028: formal parameter 1 different from declaration
+  TCB.c
+  SACK.c
+  RTO.c
+  DelayedAck.c
+  CUBIC.c
+c:\program files\netsim standard\src\simulation\tcp\cubic.c(228): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Congestion.c
+c:\program files\netsim standard\src\simulation\tcp\congestion.c(413): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1189,5): warning MSB8012: TargetPath(C:\Program Files\NetSim Standard\src\Simulation\TCP\..\Dll\TCP.dll) does not match the Linker's OutputFile property value (C:\Program Files\NetSim Standard\src\Simulation\Dll\libTCP.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1191,5): warning MSB8012: TargetName(TCP) does not match the Linker's OutputFile property value (libTCP). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+Congestion.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+  TCP.lib(TCPLib.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+Congestion.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+     Creating library ..\Dll\TCP.lib and object ..\Dll\TCP.exp
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  Finished generating code
+TCP.lib(TCPLib.obj) : warning LNK4099: PDB 'TCPLib.pdb' was not found with 'TCP.lib(TCPLib.obj)' or at 'C:\Program Files\NetSim Standard\src\Simulation\Dll\TCPLib.pdb'; linking object as if no debug info
+list.lib(List.obj) : warning LNK4099: PDB 'List.pdb' was not found with 'list.lib(List.obj)' or at 'C:\Program Files\NetSim Standard\src\Simulation\Dll\List.pdb'; linking object as if no debug info
+  TCP.vcxproj -> C:\Program Files\NetSim Standard\src\Simulation\TCP\..\Dll\TCP.dll
+  TCP.vcxproj -> ..\Dll\TCP.pdb (Full PDB)
