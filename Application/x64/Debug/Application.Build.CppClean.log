@@ -1,5 +1,5 @@
-g:\kanak\personal\bin\application.lib
-g:\kanak\personal\bin\application.exp
+g:\kanak\personal\vanet_project\project_source_codes\dll\application.lib
+g:\kanak\personal\vanet_project\project_source_codes\dll\application.exp
 g:\kanak\personal\vanet_project\project_source_codes\application\x64\debug\vc140.pdb
 g:\kanak\personal\vanet_project\project_source_codes\application\x64\debug\vc140.idb
 g:\kanak\personal\vanet_project\project_source_codes\application\x64\debug\aes.obj
@@ -16,8 +16,8 @@ g:\kanak\personal\vanet_project\project_source_codes\application\x64\debug\encry
 g:\kanak\personal\vanet_project\project_source_codes\application\x64\debug\multicast.obj
 g:\kanak\personal\vanet_project\project_source_codes\application\x64\debug\randomnumber.obj
 g:\kanak\personal\vanet_project\project_source_codes\application\x64\debug\rebroadcast.obj
-g:\kanak\personal\bin\libapplication.dll
-g:\kanak\personal\bin\application.pdb
+g:\kanak\personal\vanet_project\project_source_codes\dll\libapplication.dll
+g:\kanak\personal\vanet_project\project_source_codes\dll\application.pdb
 g:\kanak\personal\vanet_project\project_source_codes\application\x64\debug\application.tlog\application.write.1u.tlog
 g:\kanak\personal\vanet_project\project_source_codes\application\x64\debug\application.tlog\cl.command.1.tlog
 g:\kanak\personal\vanet_project\project_source_codes\application\x64\debug\application.tlog\cl.read.1.tlog

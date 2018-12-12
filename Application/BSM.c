@@ -131,7 +131,7 @@ bool add_sae_j2735_payload(NetSim_PACKET* packet, APP_INFO* info)
 	pBSMHeader->Source_vehicle_coordinates[1] = DEVICE_POSITION(packet->nSourceId)->Y;
 	pBSMHeader->Source_Vehicle_ID = packet->nSourceId;
 	pBSMHeader->Timestamp = packet->dEventTime;
-	pstruEventDetails->pPacket->pstruAppData->Packet_AppProtocol = pBSMHeader;
+	packet->pstruAppData->Packet_AppProtocol = pBSMHeader;
 	return true;
 	return false;
 }

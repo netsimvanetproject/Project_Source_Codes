@@ -181,6 +181,8 @@ double *corr(char* id)
 
 	double xcor1,ycor1;	 // x and y coordinates to be received from sumo
 	double* coordinates;
+	double speed; //speed of vehicle to be received from sumo
+	double direction; //direction of vehicle to be received from sumo
 
 	do 
 	{ 
@@ -281,6 +283,42 @@ double *corr(char* id)
 		ycor1 = atof(chBuf);
 		if(ycor1<0)
 			ycor1=0;
+
+		do
+		{
+			// Read vehicle speed
+			fSuccess = ReadFile
+			(
+				hPipe, // pipe handle
+				chBuf, // buffer to receive reply
+				BUFSIZ * sizeof(CHAR), // size of buffer
+				&cbRead, // number of bytes read
+				NULL// not overlapped
+			);
+			if (!fSuccess && GetLastError() != ERROR_MORE_DATA)
+				break;
+			chBuf[cbRead] = 0;
+		} while (!fSuccess); // repeat loop if ERROR_MORE_DATA
+		speed = atof(chBuf);
+
+		do
+		{
+			// Read vehicle direction
+			fSuccess = ReadFile
+			(
+				hPipe, // pipe handle
+				chBuf, // buffer to receive reply
+				BUFSIZ * sizeof(CHAR), // size of buffer
+				&cbRead, // number of bytes read
+				NULL// not overlapped
+			);
+			if (!fSuccess && GetLastError() != ERROR_MORE_DATA)
+				break;
+			chBuf[cbRead] = 0;
+		} while (!fSuccess); // repeat loop if ERROR_MORE_DATA
+
+		direction = atof(chBuf);
+		fprintf(stderr, "\n%s Direction: %f(Degrees)\tSpeed: %f(m/s)\n", id, direction, speed);
 
 		coordinates = (double*)malloc(2*sizeof* coordinates);
 		coordinates[0]=xcor1;

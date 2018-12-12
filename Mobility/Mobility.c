@@ -343,15 +343,7 @@ _declspec(dllexport) int fn_NetSim_Mobility_Run()
 			double vel = NETWORK->ppstruDeviceList[pstruEventDetails->nDeviceId-1]->pstruDeviceMobility->dAvgSpeed;
 			MOBILITY_VAR* pstruMobilityVar = (MOBILITY_VAR*)NETWORK->ppstruDeviceList[pstruEventDetails->nDeviceId - 1]->pstruDeviceMobility->pstruMobVar;
 			double dPresentTime = pstruMobilityVar->dLastTime;
-			fprintf(stderr, "\n The position of %s at time %.2lfms is X=%.2lf and Y = %.2lf \n", DEVICE_NAME(pstruEventDetails->nDeviceId),
-
-				pstruEventDetails->dEventTime,
-
-				DEVICE_POSITION(pstruEventDetails->nDeviceId)->X,
-
-				DEVICE_POSITION(pstruEventDetails->nDeviceId)->Y);
-
-			_getch();
+			
 			if (NETWORK->ppstruDeviceList[pstruEventDetails->nDeviceId - 1]->pstruDeviceMobility
 				&& NETWORK->ppstruDeviceList[pstruEventDetails->nDeviceId - 1]->pstruDeviceMobility->nMobilityType == MobilityModel_FILEBASEDMOBILITY)
 			{
