@@ -1,28 +1,28 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  ReBroadcast.c
-  RandomNumber.c
-  Multicast.c
-  Encryption.c
-  Emulation_application.c
-  Distribution.c
-  des_run.c
-  des.c
-  Database_FTP_Custom.c
-  CoAP.c
-  BSM.c
-g:\kanak\personal\vanet_project\project_source_codes\application\bsm.c(124): warning C4244: '=': conversion from '__int64' to 'unsigned int', possible loss of data
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  aes.c
+  aes_run.c
   Application.c
 g:\kanak\personal\vanet_project\project_source_codes\application\application.c(750): warning C4013: 'encryptBlock' undefined; assuming extern returning int
 g:\kanak\personal\vanet_project\project_source_codes\application\application.c(752): warning C4013: 'aes256' undefined; assuming extern returning int
 g:\kanak\personal\vanet_project\project_source_codes\application\application.c(754): warning C4013: 'des' undefined; assuming extern returning int
-  aes_run.c
-  aes.c
+  BSM.c
+g:\kanak\personal\vanet_project\project_source_codes\application\bsm.c(125): warning C4244: '=': conversion from '__int64' to 'unsigned int', possible loss of data
+  CoAP.c
+  Database_FTP_Custom.c
+  des.c
+  des_run.c
+  Distribution.c
+  Emulation_application.c
+  Encryption.c
+  Multicast.c
+  RandomNumber.c
+  ReBroadcast.c
   Generating Code...
-C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1189,5): warning MSB8012: TargetPath(G:\KANAK\Personal\VANET_PROJECT\Project_Source_Codes\Application\..\Dll\Application.dll) does not match the Linker's OutputFile property value (G:\KANAK\Personal\VANET_PROJECT\Project_Source_Codes\Dll\libApplication.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
-C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1191,5): warning MSB8012: TargetName(Application) does not match the Linker's OutputFile property value (libApplication). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
-aes.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1202,5): warning MSB8012: TargetPath(G:\KANAK\Personal\VANET_PROJECT\Project_Source_Codes\Application\..\Dll\Application.dll) does not match the Linker's OutputFile property value (G:\KANAK\Personal\VANET_PROJECT\Project_Source_Codes\Dll\libApplication.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1204,5): warning MSB8012: TargetName(Application) does not match the Linker's OutputFile property value (libApplication). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+aes.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
   Application.lib(HTTP.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
-aes.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+aes.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
      Creating library ..\Dll\Application.lib and object ..\Dll\Application.exp
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
@@ -38,4 +38,3 @@ Application.lib(App_Metrics.obj) : warning LNK4099: PDB 'ApplicationLib.pdb' was
 list.lib(List.obj) : warning LNK4099: PDB 'List.pdb' was not found with 'list.lib(List.obj)' or at 'G:\KANAK\Personal\VANET_PROJECT\Project_Source_Codes\Dll\List.pdb'; linking object as if no debug info
 IP.lib(IPLib.obj) : warning LNK4099: PDB 'IPLib.pdb' was not found with 'IP.lib(IPLib.obj)' or at 'G:\KANAK\Personal\VANET_PROJECT\Project_Source_Codes\Dll\IPLib.pdb'; linking object as if no debug info
   Application.vcxproj -> G:\KANAK\Personal\VANET_PROJECT\Project_Source_Codes\Application\..\Dll\Application.dll
-  Application.vcxproj -> ..\Dll\Application.pdb (Full PDB)

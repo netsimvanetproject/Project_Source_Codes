@@ -12,7 +12,7 @@
 *                                                                                  *
 * ---------------------------------------------------------------------------------*/
 #include "Application.h"
-
+#include "../Mobility/Mobility.h"
 typedef struct stru_NetSim_BSM_Header BSM_Header;
 struct stru_NetSim_BSM_Header
 {
@@ -120,13 +120,14 @@ bool add_sae_j2735_payload(NetSim_PACKET* packet, APP_INFO* info)
 	// Add the payload based on SAE J2735 or any other standard
 	// return true after adding.
 	BSM_Header* pBSMHeader = calloc(1, sizeof* pBSMHeader);
+	SUMO_VEH_VAR *vehvar = NETWORK->ppstruDeviceList[packet->nSourceId - 1]->deviceVar;
 	pBSMHeader->Flag_FromTrailingVehicle=0;
 	pBSMHeader->MessageID=packet->nPacketId;
-	pBSMHeader->Message_Direction = 0.0;
+	pBSMHeader->Message_Direction = vehvar->direction;
 	pBSMHeader->Sender_vehicle_coordinates[0] = DEVICE_POSITION(packet->nSourceId)->X;
 	pBSMHeader->Sender_vehicle_coordinates[1] = DEVICE_POSITION(packet->nSourceId)->Y;
 	pBSMHeader->Sender_Vehicle_ID = packet->nTransmitterId;
-	pBSMHeader->Sender_vehicle_Speed = 0.0;
+	pBSMHeader->Sender_vehicle_Speed = vehvar->speed;
 	pBSMHeader->Source_vehicle_coordinates[0] = DEVICE_POSITION(packet->nSourceId)->X;
 	pBSMHeader->Source_vehicle_coordinates[1] = DEVICE_POSITION(packet->nSourceId)->Y;
 	pBSMHeader->Source_Vehicle_ID = packet->nSourceId;

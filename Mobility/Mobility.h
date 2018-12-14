@@ -23,11 +23,12 @@ extern "C" {
 #define Mobility_STEP_SIZE_DEFAULT				1
 #define Mobility_CALCULATION_INTERVAL_DEFAULT	1
 
-
+	
 	typedef enum enum_MobilityModel MOBILITY_MODEL;
 
 	typedef struct stru_NetSim_Mobility NetSim_MOBILITY;
 	typedef struct stru_NetSim_MobilityVar MOBILITY_VAR;
+	typedef struct stru_SUMO_vehicle_parameters SUMO_VEH_VAR;
 	/** Structure to store the mobility variables */
 
 	typedef enum
@@ -50,6 +51,14 @@ extern "C" {
 	double dSimulationArea_X; //Store the simulation area_x
 	double dSimulationArea_Y;//Store the simulationar area_y
 
+	struct stru_SUMO_vehicle_parameters
+	{
+		NETSIM_ID Vehicle_ID;
+		double X;
+		double Y;
+		double speed;
+		double direction;
+	};
 	/* Store the mobility variable for each device*/
 	struct stru_NetSim_Mobility
 	{

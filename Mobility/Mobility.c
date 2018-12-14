@@ -61,8 +61,10 @@ _declspec(dllexport) int fn_NetSim_Mobility_Configure(void** var)
 	if(!_stricmp(tagname,"MOBILITY"))
 	{
 		MOBILITY_VAR* pstruMobilityVar=(MOBILITY_VAR*)calloc(1,sizeof* pstruMobilityVar);
+		SUMO_VEH_VAR* pstruSUMOVar= (SUMO_VEH_VAR*)calloc(1, sizeof* pstruSUMOVar);
 		NETWORK=(struct stru_NetSim_Network*)var[1];
 		NETWORK->ppstruDeviceList[nDeviceId-1]->pstruDeviceMobility->pstruMobVar = pstruMobilityVar;
+		NETWORK->ppstruDeviceList[nDeviceId - 1]->deviceVar = pstruSUMOVar;
 		//Configure the Model
 		getXmlVar(&szVal,MODEL,xmlNetSimNode,1,_STRING,Mobility);
 

@@ -4,6 +4,7 @@
   Mobility.c
   NodeJoin.c
   Sumo_interface.c
+g:\kanak\personal\vanet_project\project_source_codes\mobility\sumo_interface.c(327): warning C4003: not enough actual parameters for macro 'DEVICE'
   Generating Code...
 C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1202,5): warning MSB8012: TargetPath(G:\KANAK\Personal\VANET_PROJECT\Project_Source_Codes\Mobility\..\Dll\Mobility.dll) does not match the Linker's OutputFile property value (G:\KANAK\Personal\VANET_PROJECT\Project_Source_Codes\Dll\libMobility.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
 C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1204,5): warning MSB8012: TargetName(Mobility) does not match the Linker's OutputFile property value (libMobility). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
